@@ -6,21 +6,14 @@ A few little [Raycast](https://www.raycast.com) extensions I made for my Mac. Ea
 
 <table>
   <tr>
-    <td align="center" width="33%">
-      <a href="extensions/hey-gemini"><img src="extensions/hey-gemini/assets/hey-gemini.png" width="96" alt=""></a><br><br>
-      <a href="extensions/hey-gemini"><strong>Hey Gemini</strong></a><br>
-      Message Gemini from anywhere.
-    </td>
-    <td align="center" width="33%">
-      <a href="extensions/showtime"><img src="extensions/showtime/assets/showtime.png" width="96" alt=""></a><br><br>
-      <a href="extensions/showtime"><strong>Showtime</strong></a><br>
-      Demo mode for your desktop. One window, everything else offstage.
-    </td>
-    <td align="center" width="33%">
-      <a href="extensions/re-edge"><img src="extensions/re-edge/assets/re-edge.png" width="96" alt=""></a><br><br>
-      <a href="extensions/re-edge"><strong>Re-Edge</strong></a><br>
-      Pick an Edge tab and its minimized window comes back.
-    </td>
+    <td align="center" valign="middle" width="33%"><a href="extensions/hey-gemini"><img align="middle" src="extensions/hey-gemini/assets/hey-gemini.png" width="96" height="96" alt="Hey Gemini"></a></td>
+    <td align="center" valign="middle" width="33%"><a href="extensions/showtime"><img align="middle" src="extensions/showtime/assets/showtime.png" width="96" height="96" alt="Showtime"></a></td>
+    <td align="center" valign="middle" width="33%"><a href="extensions/re-edge"><img align="middle" src="extensions/re-edge/assets/re-edge.png" width="96" height="96" alt="Re-Edge"></a></td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle"><a href="extensions/hey-gemini"><strong>Hey Gemini</strong></a><br>Message Gemini from anywhere.</td>
+    <td align="center" valign="middle"><a href="extensions/showtime"><strong>Showtime</strong></a><br>Demo mode for your desktop. One window, everything else offstage.</td>
+    <td align="center" valign="middle"><a href="extensions/re-edge"><strong>Re-Edge</strong></a><br>Pick an Edge tab and its minimized window comes back.</td>
   </tr>
 </table>
 
@@ -30,19 +23,35 @@ A few little [Raycast](https://www.raycast.com) extensions I made for my Mac. Ea
 
 Hit your hotkey, type, press Enter. Gemini comes to the front and your message is sent, even if the app was hidden, minimized, or closed.
 
-| | |
-| --- | --- |
-| <img src="extensions/hey-gemini/assets/hey-gemini.png" width="40" alt=""> **Hey Gemini** | Sends to the chat you have open |
-| <img src="extensions/hey-gemini/assets/hey-gemini-incognito.png" width="40" alt=""> **Hey Gemini Incognito** | Starts a Temporary Chat first. Same thing, but shh. |
+<table>
+  <tr>
+    <td align="center" valign="middle" width="72"><img align="middle" src="extensions/hey-gemini/assets/hey-gemini.png" width="44" height="44" alt=""></td>
+    <td valign="middle"><strong>Hey&nbsp;Gemini</strong></td>
+    <td valign="middle">Sends to the chat you have open</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" width="72"><img align="middle" src="extensions/hey-gemini/assets/hey-gemini-incognito.png" width="44" height="44" alt=""></td>
+    <td valign="middle"><strong>Hey&nbsp;Gemini&nbsp;Incognito</strong></td>
+    <td valign="middle">Starts a Temporary Chat first. Same thing, but shh.</td>
+  </tr>
+</table>
 
 ## Showtime
 
 <img src="docs/images/showtime.png" alt="Illustration: a cluttered desktop becomes one centered window" width="100%">
 
-| | |
-| --- | --- |
-| <img src="extensions/showtime/assets/showtime.png" width="40" alt=""> **Showtime** | Centers your window at 85% of the screen, hides other apps, desktop icons, and widgets, and auto-hides the Dock and menu bar |
-| <img src="extensions/showtime/assets/curtain-call.png" width="40" alt=""> **Curtain Call** | Puts it all back, with windows right where they were |
+<table>
+  <tr>
+    <td align="center" valign="middle" width="72"><img align="middle" src="extensions/showtime/assets/showtime.png" width="44" height="44" alt=""></td>
+    <td valign="middle"><strong>Showtime</strong></td>
+    <td valign="middle">Centers your window at 85% of the screen, hides other apps, desktop icons, and widgets, and auto-hides the Dock and menu bar</td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" width="72"><img align="middle" src="extensions/showtime/assets/curtain-call.png" width="44" height="44" alt=""></td>
+    <td valign="middle"><strong>Curtain&nbsp;Call</strong></td>
+    <td valign="middle">Puts it all back, with windows right where they were</td>
+  </tr>
+</table>
 
 Searching "demo" in Raycast finds both.
 
