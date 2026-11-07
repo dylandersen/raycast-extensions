@@ -7,6 +7,8 @@ const LAUNCH_TIMEOUT_SECONDS = 20;
 const KNOWN_INPUT_PATH = [0, 0, 2, 1, 0];
 const MAX_SEARCH_DEPTH = 14;
 const TEMPORARY_MODE = "temporary";
+const NEW_CHAT_TITLE_SUFFIX = "New chat";
+const NEW_CHAT_TIMEOUT_SECONDS = 2;
 const RETURN_KEY = 36;
 
 const app = Application.currentApplication();
@@ -86,6 +88,10 @@ function focusedInput(process) {
   return null;
 }
 
+function mainWindow(windows) {
+  return windows.find((w) => w.subrole() === "AXStandardWindow") || windows[0];
+}
+
 function waitForWindow() {
   const deadline = Date.now() + LAUNCH_TIMEOUT_SECONDS * 1000;
   while (Date.now() < deadline) {
@@ -95,7 +101,7 @@ function waitForWindow() {
       process.visible = true;
       const windows = process.windows();
       if (windows.length > 0) {
-        const win = windows.find((w) => w.subrole() === "AXStandardWindow") || windows[0];
+        const win = mainWindow(windows);
         const minimized = win.attributes.byName("AXMinimized");
         if (minimized.value()) minimized.value = false;
         return { process, win };
@@ -108,13 +114,15 @@ function waitForWindow() {
 
 // Gemini only focuses its message box in some chats, so fall back to finding and focusing it.
 // A freshly launched app can still be building its window, so keep trying until the deadline.
-function waitForInput(process, win) {
+function waitForInput(process) {
   const deadline = Date.now() + LAUNCH_TIMEOUT_SECONDS * 1000;
   while (Date.now() < deadline) {
     process.frontmost = true;
     const focused = focusedInput(process);
     if (focused !== null) return focused;
 
+    // A window reference goes stale when its title changes, so look it up each time
+    const win = mainWindow(process.windows());
     const input = inputAtKnownPath(win) || findInput(win);
     if (input !== null) {
       input.focused = true;
@@ -123,6 +131,14 @@ function waitForInput(process, win) {
     delay(0.1);
   }
   throw new Error("its message box didn't appear");
+}
+
+// Wait for the new chat to open, or the prompt could land in the chat it's replacing
+function startChat(process, menuItem) {
+  process.menuBars[0].menuBarItems.byName("File").menus[0].menuItems.byName(menuItem).click();
+  const deadline = Date.now() + NEW_CHAT_TIMEOUT_SECONDS * 1000;
+  while (Date.now() < deadline && !mainWindow(process.windows()).title().endsWith(NEW_CHAT_TITLE_SUFFIX)) delay(0.05);
+  delay(0.2);
 }
 
 function run(argv) {
@@ -136,12 +152,9 @@ function run(argv) {
   win.actions.byName("AXRaise").perform();
   centerWindow(win);
 
-  if (mode === TEMPORARY_MODE) {
-    process.menuBars[0].menuBarItems.byName("File").menus[0].menuItems.byName("New Temporary Chat").click();
-    delay(0.5);
-  }
+  startChat(process, mode === TEMPORARY_MODE ? "New Temporary Chat" : "New Chat");
 
-  const input = waitForInput(process, win);
+  const input = waitForInput(process);
   input.value = prompt;
   delay(0.2);
   systemEvents.keyCode(RETURN_KEY);

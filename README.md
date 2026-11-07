@@ -27,7 +27,7 @@ Hit your hotkey, type, press Enter. Gemini comes to the front and your message i
   <tr>
     <td align="center" valign="middle" width="72"><img align="middle" src="extensions/hey-gemini/assets/hey-gemini.png" width="44" height="44" alt=""></td>
     <td valign="middle"><strong>Hey&nbsp;Gemini</strong></td>
-    <td valign="middle">Sends to the chat you have open</td>
+    <td valign="middle">Starts a fresh chat every time</td>
   </tr>
   <tr>
     <td align="center" valign="middle" width="72"><img align="middle" src="extensions/hey-gemini/assets/hey-gemini-incognito.png" width="44" height="44" alt=""></td>

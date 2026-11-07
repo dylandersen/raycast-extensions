@@ -16,7 +16,7 @@
     {
       "name": "ask-gemini",
       "title": "Hey Gemini",
-      "description": "Bring Gemini to the front and send what you type",
+      "description": "Start a new Gemini chat and send what you type",
       "icon": "hey-gemini.png",
       "mode": "no-view",
       "arguments": [
