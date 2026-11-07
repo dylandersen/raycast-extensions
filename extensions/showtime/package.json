@@ -1,0 +1,55 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "window-presets",
+  "title": "Showtime",
+  "description": "Clear your desktop for a demo, then put everything back",
+  "icon": "showtime.png",
+  "author": "dylandersen",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "commands": [
+    {
+      "name": "demo",
+      "title": "Showtime",
+      "description": "Center the active window and hide everything else",
+      "mode": "no-view",
+      "icon": "showtime.png",
+      "keywords": [
+        "demo",
+        "demo mode",
+        "present",
+        "clean desktop",
+        "screen share"
+      ]
+    },
+    {
+      "name": "exit-demo",
+      "title": "Curtain Call",
+      "description": "End the show and put your desktop back",
+      "mode": "no-view",
+      "icon": "curtain-call.png",
+      "keywords": [
+        "exit demo",
+        "demo mode",
+        "restore",
+        "end demo"
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.101.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.10",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop"
+  }
+}

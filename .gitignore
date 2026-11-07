@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Raycast and build output
+dist/
+raycast-env.d.ts
+*.tsbuildinfo
+.turbo/
+coverage/
+
+# Secrets and local config
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+
+# Archives
+*.tar.gz
+*.zip
+
+# Editors and macOS
+.DS_Store
+.vscode/
+.idea/
+*.swp

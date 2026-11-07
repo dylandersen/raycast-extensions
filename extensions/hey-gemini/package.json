@@ -1,0 +1,71 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "ask-gemini",
+  "title": "Hey Gemini",
+  "description": "Send a prompt to the Gemini desktop app from anywhere",
+  "icon": "hey-gemini.png",
+  "author": "dylandersen",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "commands": [
+    {
+      "name": "ask-gemini",
+      "title": "Hey Gemini",
+      "description": "Bring Gemini to the front and send what you type",
+      "icon": "hey-gemini.png",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "prompt",
+          "type": "text",
+          "placeholder": "Message Gemini",
+          "required": true
+        }
+      ],
+      "keywords": [
+        "gemini",
+        "ask",
+        "prompt",
+        "ai"
+      ]
+    },
+    {
+      "name": "ask-gemini-incognito",
+      "title": "Hey Gemini Incognito",
+      "description": "Same thing, sent in a Temporary Chat",
+      "icon": "hey-gemini-incognito.png",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "prompt",
+          "type": "text",
+          "placeholder": "Message Gemini",
+          "required": true
+        }
+      ],
+      "keywords": [
+        "gemini",
+        "ask",
+        "temporary",
+        "private",
+        "incognito"
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.101.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.10",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop"
+  }
+}
